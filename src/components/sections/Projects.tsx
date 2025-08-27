@@ -79,10 +79,91 @@ const Projects = () => {
       demoLink: '#',
       githubLink: 'https://github.com/Dhanushkumar04/object_detection_yolo',
       featured: false,
-    }
+    },
+    {
+      title: 'Heart Disease Prediction Model',
+      description: 'Developed an ML model using Logistic Regression on the UCI Heart Disease Dataset to predict heart disease based on medical attributes with 85% accuracy.',
+      image: '❤️',
+      tags: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Logistic Regression', 'ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Heart_Disease_Prediction', 
+      featured: true,
+    },
+    {
+      title: 'Salary Prediction Model',
+      description: 'Built and deployed a Linear Regression model to predict salaries based on years of experience. Deployed using a serialized model with API testing via Postman.',
+      image: '💼',
+      tags: ['Python', 'Scikit-learn', 'Linear Regression', 'ML', 'API'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Salary_Prediction', 
+      featured: false,
+    },
+    {
+      title: 'Loan Risk Prediction Model',
+      description: 'Developed a Random Forest ML model to predict loan approval based on financial and demographic features. Achieved 98% accuracy and deployed with model.pkl for real-time predictions via Postman.',
+      image: '🏦',
+      tags: ['Python', 'Scikit-learn', 'Random Forest', 'ML', 'EDA','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Loan_Risk_Prediction', 
+      featured: false,
+    },
+    {
+      title: 'YouTube Comments Sentiment Analysis',
+      description: 'Built an NLP model using SVM to classify 18k+ YouTube comments into Positive, Neutral, and Negative sentiments. Used TF-IDF for feature extraction, achieved balanced accuracy, and visualized sentiment trends with keyword insights.',
+      image: '💬',
+      tags: ['Python', 'NLP', 'SVM', 'TF-IDF', 'Scikit-learn','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Sentiment_Analysis', 
+      featured: false,
+    },
+    {
+      title: 'News Title Classification Model',
+      description: 'Developed an NLP-based text classification model using Logistic Regression to categorize news article titles into Politics, Business, Sports, Health, and Entertainment. Applied TF-IDF vectorization, Label Encoding, and scikit-learn pipeline for preprocessing and training.',
+      image: '📰',
+      tags: ['Python', 'NLP', 'Logistic Regression', 'TF-IDF', 'Scikit-learn','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/News_Classification',
+      featured: false,
+    },
+    {
+      title: 'Customer Segmentation Model',
+      description: 'Built a customer segmentation system using K-Means Clustering to group users by gender, age, income, and spending score. Enabled targeted marketing by identifying Low Spenders and High Spenders, with insights visualized through PCA scatter plots and distribution charts.',
+      image: '👥',
+      tags: ['Python', 'K-Means', 'Machine Learning', 'Pandas', 'Matplotlib','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Customer_Segmentation',
+      featured: false,
+    },
+    {
+      title: 'Personality Prediction Model',
+      description: 'Developed a personality classification system using behavioral trait data (600k+ entries) to predict Introvert, Ambivert, or Extrovert. Built an MLP model with TensorFlow/Keras, applied PCA for visualization, and achieved reliable accuracy with EarlyStopping.',
+      image: '🧠',
+      tags: ['Python', 'TensorFlow', 'Keras', 'MLP', 'Pandas', 'Scikit-learn','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/Personality_Prediction',
+      featured: false,
+    },
+    {
+      title: 'Credit Card Fraud Detection',
+      description: 'Built an anomaly detection model using Autoencoders to identify fraudulent credit card transactions. Trained on normal data, used reconstruction error as anomaly score, and achieved ~97% accuracy with strong AUC-ROC performance.',
+      image: '💳',
+      tags: ['Python', 'TensorFlow', 'Keras', 'Autoencoder', 'Scikit-learn','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/CreditCard_Fraud_Detection',
+      featured: false,
+    },
+    {
+      title: 'Time Series Forecasting',
+      description: 'Developed a SARIMAX-based forecasting model with exogenous features to predict future values up to 2025. Achieved low error (1.59% relative RMSE) with strong handling of seasonality and trends for reliable future predictions.',
+      image: '📈',
+      tags: ['Python', 'SARIMAX', 'Time Series', 'Statsmodels','ML'],
+      demoLink: '#',
+      githubLink: 'https://github.com/Dhanushkumar04/TimeSeries_Forecasting',
+      featured: false,
+    },
   ];
 
-  const filters = ['All', 'React', 'JavaScript', 'Node.js', 'API'];
+  const filters = ['All', 'React', 'JavaScript','ML'];
 
   const filteredProjects = activeFilter === 'All' 
     ? projects 

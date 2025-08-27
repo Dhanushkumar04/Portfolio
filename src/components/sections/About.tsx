@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code, Brain, Users, Server } from 'lucide-react';
+import { Code, Brain, Users, Server, LineChart } from 'lucide-react';
 
 const About = () => {
   const ref = useRef(null);
@@ -31,25 +31,31 @@ const About = () => {
       icon: Code,
       title: 'Full-Stack Web Development',
       description:
-        'Experienced with Django, React, Bootstrap, Node.js, and MongoDB for dynamic web apps.',
+        'Experienced in building scalable applications using Django, React, Bootstrap, Node.js, and MongoDB.',
     },
     {
       icon: Brain,
-      title: 'AI & Deep Learning',
+      title: 'Machine Learning & AI',
       description:
-        'Built an AI-powered real-time hand sign detection system using YOLOv5.',
+        'Developed ML/DL projects including Loan Risk Prediction, Sentiment Classification, Customer Segmentation, Personality Prediction, and Fraud Detection using Autoencoders.',
+    },
+    {
+      icon: LineChart,
+      title: 'Data Science & Forecasting',
+      description:
+        'Worked on predictive modeling and time series forecasting (SARIMAX) to analyze trends and generate accurate future insights.',
     },
     {
       icon: Server,
       title: 'Backend & APIs',
       description:
-        'Skilled in building RESTful APIs, MySQL integration, and user authentication systems.',
+        'Skilled in RESTful APIs, authentication, and database integration with MySQL, MongoDB, and Flask/Django backends.',
     },
     {
       icon: Users,
-      title: 'Team & Leadership',
+      title: 'Teamwork & Leadership',
       description:
-        'Strong in communication, collaboration, leadership, and problem-solving during team projects and competitions.',
+        'Strong collaboration, leadership, and problem-solving skills developed through hackathons, projects, and team-based competitions.',
     },
   ];
 
@@ -71,7 +77,13 @@ const About = () => {
               About Me
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I'm an enthusiastic full-stack developer with a passion for building seamless digital experiences using Django, React, and modern web technologies.
+              I'm an enthusiastic full-stack developer and ML enthusiast with a
+              passion for solving real-world problems using technology. I’ve
+              built applications ranging from e-commerce and movie databases to
+              AI-driven projects like fraud detection, sentiment analysis, and
+              time series forecasting. I enjoy learning continuously and pushing
+              my boundaries in both software development and artificial
+              intelligence.
             </p>
           </motion.div>
 
@@ -95,7 +107,14 @@ const About = () => {
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-4">Hey there! 👋</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm currently pursuing Computer Science Engineering at Kumaraguru College of Technology. I enjoy solving problems using technology and have built applications in e-commerce, movie databases, and real-time AI using YOLOv5. I love participating in hackathons and continuously improving my skills in full-stack development and deep learning.
+                  I'm currently pursuing Computer Science Engineering at
+                  Kumaraguru College of Technology. My journey spans full-stack
+                  web apps, ML/DL projects, and AI-based solutions. From
+                  predicting loan approvals and customer behavior to building
+                  fraud detection systems and forecasting trends, I thrive at
+                  the intersection of data science and development. I love
+                  hackathons, teamwork, and turning ideas into impactful
+                  solutions.
                 </p>
               </div>
             </motion.div>
@@ -136,9 +155,9 @@ const About = () => {
           >
             {[
               { number: '2+', label: 'Years Experience' },
-              { number: '4+', label: 'Major Projects' },
-              { number: '3+', label: 'AI Models Trained' },
-              { number: '24/7', label: 'Curiosity & Learning' },
+              { number: '12+', label: 'Projects Completed' },
+              { number: '7+', label: 'ML/DL Models Built' },
+              { number: '∞', label: 'Curiosity & Learning' },
             ].map((stat) => (
               <motion.div
                 key={stat.label}

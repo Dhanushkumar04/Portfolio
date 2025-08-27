@@ -8,25 +8,93 @@ const Resume = () => {
 
   const experience = [
     {
-      title: 'E-Commerce Website Development',
+      title: 'Heart Disease Prediction Model',
       company: 'Self Project',
-      period: '2024',
+      period: '2025',
       location: 'Remote',
       achievements: [
-        'Built a full-featured e-commerce website using Django and MySQL.',
-        'Implemented user login, cart functionality, and favorites.',
-        'Focused on user-friendly UI and backend performance.',
+        'Built a Logistic Regression model using UCI Heart Disease dataset.',
+        'Achieved 85% accuracy in predicting heart disease based on patient data.',
       ],
     },
     {
-      title: 'Movie Database App',
+      title: 'Salary Prediction Model',
       company: 'Self Project',
-      period: '2024',
+      period: '2025',
       location: 'Remote',
       achievements: [
-        'Built a React app using TMDB API to browse and search movies.',
-        'Used Bootstrap for layout and responsiveness.',
-        'Displayed movie details, ratings, and posters.',
+        'Developed a Linear Regression model to predict salary based on experience.',
+        'Deployed the model with Flask API and tested via Postman.',
+      ],
+    },
+    {
+      title: 'Loan Risk Prediction',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Built a RandomForest model to predict loan approval chances.',
+        'Achieved 98% accuracy using financial and demographic data.',
+      ],
+    },
+    {
+      title: 'Sentiment Classification (YouTube Comments)',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Trained an SVM model on 18k+ comments for Positive, Neutral, and Negative sentiment.',
+        'Used TF-IDF for feature extraction and visualized sentiment distribution.',
+      ],
+    },
+    {
+      title: 'News Text Classification',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Built a Logistic Regression model with TF-IDF to classify news titles.',
+        'Improved accuracy by text preprocessing and feature engineering.',
+      ],
+    },
+    {
+      title: 'Customer Segmentation (K-Means)',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Applied K-Means clustering to segment customers into Low/High spenders.',
+        'Visualized clusters and provided marketing insights.',
+      ],
+    },
+    {
+      title: 'Personality Prediction (ML + DL)',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Used Deep Learning (MLP) with behavioral traits dataset of 600k+ entries.',
+        'Classified users into Introvert, Ambivert, and Extrovert with reliable accuracy.',
+      ],
+    },
+    {
+      title: 'Credit Card Fraud Detection (Autoencoders)',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Trained autoencoder on normal transactions to detect fraud via anomaly detection.',
+        'Achieved 97% accuracy and high AUC-ROC despite class imbalance.',
+      ],
+    },
+    {
+      title: 'Time Series Forecasting (SARIMAX)',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Implemented SARIMAX with exogenous features to predict trends up to 2025.',
+        'Achieved very low error (1.59% relative RMSE).',
       ],
     },
     {
@@ -35,20 +103,39 @@ const Resume = () => {
       period: '2024',
       location: 'Remote',
       achievements: [
-        'Trained a YOLOv5 model to detect hand signs like Hello, Yes, Thanks.',
-        'Implemented real-time webcam integration for detection.',
-        'Worked on dataset preparation, training, and evaluation.',
+        'Trained YOLOv5 for real-time hand sign detection (Hello, Yes, Thanks).',
+        'Enabled live webcam detection with dataset preparation and evaluation.',
       ],
     },
     {
-    title: 'Bus Booking App',
-    company: 'Self Project',
-    period: '2025',
-    location: 'Remote',
-    achievements:[
-      'A frontend application to book bus tickets with a smooth and responsive UI.',
-      'Clients can choose the destinations and able to book their appropiate tickets.'
-    ]
+      title: 'E-Commerce Website Development',
+      company: 'Self Project',
+      period: '2024',
+      location: 'Remote',
+      achievements: [
+        'Built a full-featured e-commerce website using Django and MySQL.',
+        'Implemented user login, cart functionality, and favorites.',
+      ],
+    },
+    {
+      title: 'Movie Database App',
+      company: 'Self Project',
+      period: '2024',
+      location: 'Remote',
+      achievements: [
+        'Developed a React app with TMDB API to browse and search movies.',
+        'Implemented responsive UI with Bootstrap.',
+      ],
+    },
+    {
+      title: 'Bus Booking App',
+      company: 'Self Project',
+      period: '2025',
+      location: 'Remote',
+      achievements: [
+        'Built a responsive frontend app to book bus tickets.',
+        'Implemented smooth UI for selecting destinations and booking.',
+      ],
     },
     {
       title: 'Bookshop Management System',
@@ -57,8 +144,7 @@ const Resume = () => {
       location: 'Remote',
       achievements: [
         'Developed a web-based system using Django, HTML, and CSS.',
-        'Handled CRUD operations for books and categories.',
-        'Created a clean UI for shop management.',
+        'Implemented CRUD operations for books and categories.',
       ],
     },
   ];
@@ -110,7 +196,7 @@ const Resume = () => {
               My professional journey and achievements
             </p>
             <a
-              href="/DhanushKumar-Resume.pdf"
+              href="/22BCS021_DhanushKumarS.pdf"
               download
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-portfolio-purple to-portfolio-cyan text-white hover:brightness-110 transition-all w-fit mx-auto"
             >

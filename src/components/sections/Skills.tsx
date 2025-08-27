@@ -33,7 +33,7 @@ const Skills = () => {
         { name: 'YOLOv5', level: 70, icon: '🧠' },
         { name: 'Git', level: 88, icon: '📦' },
         { name: 'AWS (Foundations)', level: 65, icon: '☁️' },
-        { name: 'Excel (Beginners)', level: 70, icon: '📊' },
+       { name: 'Machine Learning', level: 80, icon: '🤖' }
       ],
     },
   ];
@@ -120,7 +120,7 @@ const Skills = () => {
             <h3 className="text-2xl font-bold mb-8 text-gradient-secondary">Also Familiar With</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                'C Programming', 'C++', 'Java', 'Deep Learning', 'Firebase', 'Material UI',
+                'C Programming', 'C++', 'Java', 'Machine Learning','Deep Learning', 'Firebase', 'Material UI',
                 'Tailwind CSS', 'OpenCV', 'Linux', 'Postman', 'APIs'
               ].map((tech, index) => (
                 <motion.span
