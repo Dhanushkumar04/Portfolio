@@ -27,7 +27,25 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch("https://formsubmit.co/ajax/dkdhanush1970@gmail.com", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _replyto: formData.email,
+          _subject: formData.subject || "New contact form submission",
+          message: formData.message,
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
