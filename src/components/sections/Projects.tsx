@@ -9,6 +9,55 @@ const Projects = () => {
 
   const projects = [
     {
+       title: 'Job Portal – Full-Stack Web Application',
+      description: 'A comprehensive job portal built with Django and React, featuring user authentication, job listings, application tracking, and an admin dashboard for managing postings and users.',
+      image: '💼',
+      tags: ['Django', 'React', 'PostgreSQL', 'Tailwind CSS'],
+      demoLink: '#',
+    },
+    {
+      title: 'Gemini Clone - AI Chat Application',
+      description: 'A React-based clone of Google\'s Gemini AI chat application, featuring natural language processing and seamless integration with the Gemini API.',
+      image: '🤖',
+      tags: ['React', 'AI', 'API Integration'],
+      demoLink: '#',
+    },
+    {
+      title: 'YouTube Clone – Video Streaming Platform',
+      description: 'A React-based clone of YouTube, featuring video playback, search functionality, and a responsive UI.',
+      image: '📺',
+      tags: ['React', 'JavaScript', 'API Integration'],
+      demoLink: '#',
+    },
+    {
+      title: 'Golf Charity Platform – Subscription-Based Web Application',
+      description: 'A subscription-based web application for a golf charity, built with Django and React. Features include user registration, subscription management, event listings, and a donation system.',
+      image: '⛳',
+      tags: ['Next.js', 'Stripe API', 'CSS','PostgreSQL','Supabase'],
+      demoLink: '#',
+    },
+    {
+      title: 'Explainable Multi-Level Diabetes Prediction System – AI/ML Web Application',
+      description: 'An AI/ML web application that predicts diabetes risk using a multi-level model. Built with Django and React, it provides users with personalized risk assessments and actionable insights based on their health data.',
+      image: '🩺',
+      tags: ['Django', 'React', 'Machine Learning', 'XGBoost', 'SHAP'],
+      demoLink: '#',
+    },
+    {
+        title: 'LearnHub – Mobile App UI/UX Design (Figma)',
+        description: 'A mobile app UI/UX design for LearnHub, an online learning platform. Created using Figma, the design focuses on user-friendly navigation, engaging visuals, and a seamless learning experience.',
+        image: '📱',
+        tags: ['Figma', 'UI/UX Design', 'Mobile App'],
+        demoLink: '#',
+    },
+    {
+        title: 'E-Commerce Sales Dashboard – Data Visualization (Tableau)',
+        description: 'A data visualization project using Tableau to create an interactive sales dashboard for an e-commerce company. The dashboard provides insights into sales performance, customer demographics, and product trends.',
+        image: '📊',
+        tags: ['Tableau', 'Data Visualization', 'E-Commerce'],
+        demoLink: '#',
+    },
+    {
       title: 'E-Commerce Website',
       description: 'A feature-rich e-commerce platform built with Django and MySQL. Includes user authentication, cart management, and product favoriting.',
       image: '🛍️',

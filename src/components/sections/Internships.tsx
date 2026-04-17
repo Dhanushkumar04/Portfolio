@@ -19,6 +19,12 @@ const Internships = () => {
       issuedDate: 'January 2026',
     },
     {
+      title:'Data Analytics',
+      image:'/internships/DHANUSH KUMAR S_DA_page-0001.jpg',
+      platform: 'NoviTech R&D Pvt Ltd',
+      issuedDate: 'March 2026',
+    },
+    {
       title: 'Power BI',
       image: '/internships/DHANUSH KUMAR S_powerBI_page-0001.jpg',
       platform: 'NoviTech R&D Pvt Ltd',
