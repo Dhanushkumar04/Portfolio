@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code, Brain, Users, Server, LineChart } from 'lucide-react';
+import { Code, Brain, Users, Server, LineChart, PenTool, BarChart } from 'lucide-react';
 
 const About = () => {
   const ref = useRef(null);
@@ -31,31 +31,31 @@ const About = () => {
       icon: Code,
       title: 'Full-Stack Web Development',
       description:
-        'Experienced in building scalable applications using Django, React, Bootstrap, Node.js, and MongoDB.',
+        'Experienced in building scalable applications using Django, React, Node.js, and PostgreSQL. Developed platforms like Job Portals and Charity systems.',
+    },
+    {
+      icon: PenTool,
+      title: 'UI/UX Design',
+      description:
+        'Passionate about creating intuitive and engaging user experiences, designing mobile apps and web platforms using tools like Figma, as seen in my LearnHub project.',
+    },
+    {
+      icon: BarChart,
+      title: 'Data Analytics & Power BI',
+      description:
+        'Skilled in transforming raw data into actionable insights through interactive dashboards and visualizations using Power BI and Tableau for e-commerce and sales.',
     },
     {
       icon: Brain,
-      title: 'Machine Learning & AI',
+      title: 'Machine Learning & Deep Learning',
       description:
-        'Developed ML/DL projects including Loan Risk Prediction, Sentiment Classification, Customer Segmentation, Personality Prediction, and Fraud Detection using Autoencoders.',
-    },
-    {
-      icon: LineChart,
-      title: 'Data Science & Forecasting',
-      description:
-        'Worked on predictive modeling and time series forecasting (SARIMAX) to analyze trends and generate accurate future insights.',
-    },
-    {
-      icon: Server,
-      title: 'Backend & APIs',
-      description:
-        'Skilled in RESTful APIs, authentication, and database integration with MySQL, MongoDB, and Flask/Django backends.',
+        'Developed predictive models and AI solutions including sentiment analysis, fraud detection, and explainable AI systems for healthcare.',
     },
     {
       icon: Users,
       title: 'Teamwork & Leadership',
       description:
-        'Strong collaboration, leadership, and problem-solving skills developed through hackathons, projects, and team-based competitions.',
+        'Strong collaboration, leadership, and problem-solving skills developed through hackathons, internships, and team-based development projects.',
     },
   ];
 
@@ -77,13 +77,7 @@ const About = () => {
               About Me
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I'm an enthusiastic full-stack developer and ML enthusiast with a
-              passion for solving real-world problems using technology. I’ve
-              built applications ranging from e-commerce and movie databases to
-              AI-driven projects like fraud detection, sentiment analysis, and
-              time series forecasting. I enjoy learning continuously and pushing
-              my boundaries in both software development and artificial
-              intelligence.
+              I'm a passionate technologist who loves turning ideas into impactful digital solutions. Having completed internships across full-stack development, UI/UX design, and data analytics, I've gained hands-on experience in building scalable web applications, designing intuitive user interfaces, and extracting meaningful insights using Power BI and machine learning. Whether it's crafting a responsive frontend, visualizing complex data, or training a deep learning model, I'm always eager to learn and create.
             </p>
           </motion.div>
 
@@ -107,14 +101,7 @@ const About = () => {
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold mb-4">Hey there! 👋</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm currently pursuing Computer Science Engineering at
-                  Kumaraguru College of Technology. My journey spans full-stack
-                  web apps, ML/DL projects, and AI-based solutions. From
-                  predicting loan approvals and customer behavior to building
-                  fraud detection systems and forecasting trends, I thrive at
-                  the intersection of data science and development. I love
-                  hackathons, teamwork, and turning ideas into impactful
-                  solutions.
+                  I'm Dhanush, currently pursuing Computer Science Engineering at Kumaraguru College of Technology. My journey in tech has been incredibly exciting, spanning across full-stack web development, UI/UX design, and data analytics. Through my recent internships and personal projects—like building interactive Tableau/Power BI dashboards, AI-powered healthcare platforms, and designing mobile apps in Figma—I've developed a versatile skill set. I thrive at the intersection of design, development, and data, bringing a holistic approach to every project I tackle.
                 </p>
               </div>
             </motion.div>

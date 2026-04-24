@@ -7,10 +7,10 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Frontend & UI/UX',
       skills: [
         { name: 'React', level: 90, icon: '⚛️' },
-        { name: 'Bootstrap', level: 85, icon: '🅱️' },
+        { name: 'UI/UX Design', level: 85, icon: '✨' },
         { name: 'HTML5', level: 92, icon: '📄' },
         { name: 'CSS3', level: 90, icon: '🎨' },
         { name: 'JavaScript', level: 88, icon: '🟨' },
@@ -27,13 +27,13 @@ const Skills = () => {
       ],
     },
     {
-      title: 'AI & Tools',
+      title: 'Data & Analytics',
       skills: [
+        { name: 'Power BI', level: 88, icon: '📊' },
+        { name: 'Tableau', level: 85, icon: '📈' },
+        { name: 'Data Analytics', level: 85, icon: '🔍' },
+        { name: 'Machine Learning', level: 80, icon: '🤖' },
         { name: 'Python', level: 85, icon: '🐍' },
-        { name: 'YOLOv5', level: 70, icon: '🧠' },
-        { name: 'Git', level: 88, icon: '📦' },
-        { name: 'AWS (Foundations)', level: 65, icon: '☁️' },
-       { name: 'Machine Learning', level: 80, icon: '🤖' }
       ],
     },
   ];
@@ -120,8 +120,8 @@ const Skills = () => {
             <h3 className="text-2xl font-bold mb-8 text-gradient-secondary">Also Familiar With</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                'C Programming', 'C++', 'Java', 'Machine Learning','Deep Learning', 'Firebase', 'Material UI',
-                'Tailwind CSS', 'OpenCV', 'Linux', 'Postman', 'APIs'
+                'C Programming', 'C++', 'Java', 'Deep Learning', 'YOLOv5', 'Firebase', 'Material UI',
+                'Tailwind CSS', 'OpenCV', 'Linux', 'Git', 'AWS', 'Postman', 'Bootstrap'
               ].map((tech, index) => (
                 <motion.span
                   key={tech}

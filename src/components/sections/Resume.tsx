@@ -1,12 +1,59 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Download, Calendar, MapPin } from 'lucide-react';
+import { title } from 'process';
 
 const Resume = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const experience = [
+    {
+      title: 'Job Portal – Full-Stack Web Application',
+      company: 'Self Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Built a full-stack job portal using React and Flask.',
+        'Implemented job search, application tracking, and user authentication.',
+      ],
+    },
+    {
+      title: 'Golf Charity Platform – Subscription-Based Web Application',
+      company: 'Self Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Built a full-stack golf charity platform using Next.js 15, Supabase, and Stripe, featuring user authentication, subscription plans (monthly/yearly), a Stableford score tracker with PostgreSQL triggers, a charity contribution engine, and an admin panel with draw management and winner verification.'
+      ],
+    },
+    {
+      title: 'Explainable Multi-Level Diabetes Prediction System – AI/ML Web Application',
+      company: 'Self Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Developed an explainable ML system for diabetes prediction with multi-stage risk stratification, interpretable AI using SHAP and LIME, and Flask-based deployment for healthcare decision support.'
+      ],
+    },
+    {
+      title: 'LearnHub – Mobile App UI/UX Design (Figma)',
+      company: 'Self Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Designed a complete mobile learning app UI/UX using Figma with modern design elements and smooth user flows.'
+      ],
+    },
+    {
+      title: 'AI-Powered Intelligent Traffic Monitoring Dashboard',
+      company: 'Self Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Developed an end-to-end traffic monitoring system using YOLOv8 (real-time object detection), FastAPI (backend API), and Streamlit (interactive dashboard). The system tracks vehicle counts, congestion levels, and average speeds, providing real-time traffic insights for smart city applications.'
+      ],
+    },
     {
       title: 'Heart Disease Prediction Model',
       company: 'Self Project',
@@ -196,7 +243,7 @@ const Resume = () => {
               My professional journey and achievements
             </p>
             <a
-              href="/22BCS021_DhanushKumarS.pdf"
+              href="/DhanushKumarS_CV.pdf"
               download
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-portfolio-purple to-portfolio-cyan text-white hover:brightness-110 transition-all w-fit mx-auto"
             >

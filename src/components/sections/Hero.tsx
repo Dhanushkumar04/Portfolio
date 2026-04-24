@@ -60,7 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl md:text-4xl font-light mb-8 text-muted-foreground"
           >
-            Full-Stack Web Developer | AI Enthusiast | React & Django
+            Full Stack Developer | UI/UX Designer | Power BI & Data Analytics
           </motion.h2>
 
           {/* Description */}
@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-           Building scalable web apps and AI-powered solutions
+           Crafting engaging user experiences, scalable web applications, and deriving actionable insights through data analytics and machine learning.
           </motion.p>
 
           {/* CTA Buttons */}
