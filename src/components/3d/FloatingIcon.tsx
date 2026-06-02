@@ -11,47 +11,184 @@ interface FloatingIconProps {
 }
 
 const FloatingIcon = ({ position, color, geometry, speed = 1 }: FloatingIconProps) => {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += 0.01 * speed;
-      meshRef.current.rotation.y += 0.01 * speed;
+      meshRef.current.rotation.x += 0.005 * speed;
+      meshRef.current.rotation.y += 0.006 * speed;
     }
   });
 
-  const getGeometry = () => {
+  // Render highly specific premium geometries representing Dhanush's actual skill sets
+  const renderSkillMesh = () => {
     switch (geometry) {
-      case 'box':
-        return <boxGeometry args={[1, 1, 1]} />;
-      case 'sphere':
-        return <sphereGeometry args={[0.7, 32, 32]} />;
-      case 'torus':
-        return <torusGeometry args={[0.7, 0.3, 16, 100]} />;
-      case 'cone':
-        return <coneGeometry args={[0.7, 1.4, 8]} />;
+      case 'box': // Stacked Code Plates representing Full-Stack Web Building
+        return (
+          <group>
+            {/* Top Plate */}
+            <mesh position={[0, 0.35, 0]}>
+              <boxGeometry args={[1.3, 0.06, 0.8]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.9}
+                roughness={0.1}
+                transparent
+                opacity={0.65}
+                emissive={color}
+                emissiveIntensity={0.2}
+              />
+            </mesh>
+            {/* Middle Plate */}
+            <mesh position={[0, 0, 0]}>
+              <boxGeometry args={[1.3, 0.06, 0.8]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.9}
+                roughness={0.1}
+                transparent
+                opacity={0.4}
+                emissive={color}
+                emissiveIntensity={0.1}
+              />
+            </mesh>
+            {/* Bottom Plate */}
+            <mesh position={[0, -0.35, 0]}>
+              <boxGeometry args={[1.3, 0.06, 0.8]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.9}
+                roughness={0.1}
+                transparent
+                opacity={0.75}
+                emissive={color}
+                emissiveIntensity={0.3}
+              />
+            </mesh>
+          </group>
+        );
+
+      case 'sphere': // Overlapping Glass UI Panels representing UI/UX Design
+        return (
+          <group>
+            {/* Background Canvas Panel */}
+            <mesh position={[-0.2, 0.1, -0.1]}>
+              <boxGeometry args={[1.1, 0.75, 0.05]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.7}
+                roughness={0.1}
+                transparent
+                opacity={0.6}
+                emissive={color}
+                emissiveIntensity={0.1}
+              />
+            </mesh>
+            {/* Overlay Dialogue Panel */}
+            <mesh position={[0.2, -0.2, 0.15]}>
+              <boxGeometry args={[0.7, 0.5, 0.05]} />
+              <meshStandardMaterial
+                color="#ec4899"
+                metalness={0.8}
+                roughness={0.1}
+                transparent
+                opacity={0.7}
+                emissive="#ec4899"
+                emissiveIntensity={0.2}
+              />
+            </mesh>
+          </group>
+        );
+
+      case 'torus': // Three-Dimensional Bar Chart representing Data Analytics
+        return (
+          <group>
+            {/* Column 1 (Left) */}
+            <mesh position={[-0.4, -0.25, 0]}>
+              <boxGeometry args={[0.22, 0.5, 0.22]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.8}
+                roughness={0.15}
+                emissive={color}
+                emissiveIntensity={0.1}
+              />
+            </mesh>
+            {/* Column 2 (Middle) */}
+            <mesh position={[0, 0.05, 0]}>
+              <boxGeometry args={[0.22, 1.1, 0.22]} />
+              <meshStandardMaterial
+                color="#06b6d4"
+                metalness={0.8}
+                roughness={0.15}
+                emissive="#06b6d4"
+                emissiveIntensity={0.2}
+              />
+            </mesh>
+            {/* Column 3 (Right) */}
+            <mesh position={[0.4, -0.1, 0]}>
+              <boxGeometry args={[0.22, 0.8, 0.22]} />
+              <meshStandardMaterial
+                color="#f97316"
+                metalness={0.8}
+                roughness={0.15}
+                emissive="#f97316"
+                emissiveIntensity={0.15}
+              />
+            </mesh>
+          </group>
+        );
+
+      case 'cone': // Central Nucleus & Outer Planetary Orbit representing AI & Machine Learning
+        return (
+          <group>
+            {/* Core glowing AI Node */}
+            <mesh position={[0, 0, 0]}>
+              <sphereGeometry args={[0.4, 32, 32]} />
+              <meshStandardMaterial
+                color={color}
+                metalness={0.9}
+                roughness={0.05}
+                emissive={color}
+                emissiveIntensity={0.6}
+              />
+            </mesh>
+            {/* Connected orbiting sensor path */}
+            <mesh rotation={[Math.PI / 3, Math.PI / 6, 0]}>
+              <torusGeometry args={[0.85, 0.04, 16, 100]} />
+              <meshStandardMaterial
+                color="#a78bfa"
+                metalness={0.9}
+                roughness={0.1}
+                transparent
+                opacity={0.8}
+                emissive="#a78bfa"
+                emissiveIntensity={0.3}
+              />
+            </mesh>
+          </group>
+        );
+
       default:
-        return <boxGeometry args={[1, 1, 1]} />;
+        return (
+          <mesh>
+            <boxGeometry args={[1, 1, 1]} />
+            <meshStandardMaterial color={color} />
+          </mesh>
+        );
     }
   };
 
   return (
     <Float
       speed={speed}
-      rotationIntensity={1}
-      floatIntensity={2}
+      rotationIntensity={0.8}
+      floatIntensity={1.4}
       floatingRange={[1, 1.5]}
     >
-      <mesh ref={meshRef} position={position}>
-        {getGeometry()}
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.3}
-          transparent
-          opacity={0.8}
-        />
-      </mesh>
+      <group ref={meshRef} position={position}>
+        {renderSkillMesh()}
+      </group>
     </Float>
   );
 };

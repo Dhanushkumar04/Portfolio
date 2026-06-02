@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import TiltCard from '@/components/ui/TiltCard';
 
 const Certifications = () => {
   const ref = useRef(null);
@@ -63,8 +64,10 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+    <section id="certifications" className="py-24 relative overflow-hidden bg-background">
+      {/* Background patterns */}
+      <div className="absolute inset-0 bg-grid-lines opacity-[0.02] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/5 to-background pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -79,9 +82,9 @@ const Certifications = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient pb-2">
               Certifications
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -89,32 +92,43 @@ const Certifications = () => {
             </p>
           </motion.div>
 
-          {/* Certifications Grid */}
+          {/* Certifications Grid with 3D TiltCards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((cert, index) => (
               <motion.div
                 key={cert.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="card-glow group hover:scale-105 transition-all duration-300 cursor-pointer rounded-xl overflow-hidden shadow-md bg-secondary/50 border border-border"
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.08 }}
+                className="h-full"
               >
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-60 object-cover rounded-t-xl"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-foreground mb-1">
-                    {cert.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    {cert.platform}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Issued: {cert.issuedDate}
-                  </p>
-                </div>
+                <TiltCard className="p-0 border-white/5 overflow-hidden hover:border-portfolio-purple/35 transition-all duration-350 cursor-pointer h-full flex flex-col justify-between">
+                  <div>
+                    <div className="overflow-hidden relative h-60 w-full bg-white/[0.02]">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                    
+                    <div className="p-5">
+                      <h3 className="text-lg font-bold text-white mb-2 leading-snug group-hover:text-portfolio-purple-light transition-colors">
+                        {cert.title}
+                      </h3>
+                      <p className="text-xs md:text-sm text-portfolio-cyan font-semibold mb-1">
+                        {cert.platform}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="px-5 pb-5 pt-0 mt-auto">
+                    <p className="text-xs text-muted-foreground">
+                      Issued: {cert.issuedDate}
+                    </p>
+                  </div>
+                </TiltCard>
               </motion.div>
             ))}
           </div>

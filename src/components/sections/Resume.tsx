@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Download, Calendar, MapPin } from 'lucide-react';
-import { title } from 'process';
+import TiltCard from '@/components/ui/TiltCard';
 
 const Resume = () => {
   const ref = useRef(null);
@@ -218,8 +218,10 @@ const Resume = () => {
   ];
 
   return (
-    <section id="resume" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+    <section id="resume" className="py-24 relative overflow-hidden bg-background">
+      {/* Background patterns */}
+      <div className="absolute inset-0 bg-grid-dots opacity-[0.03] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/5 to-background pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -234,22 +236,26 @@ const Resume = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient pb-2">
               Resume
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               My professional journey and achievements
             </p>
-            <a
+            
+            {/* Glowing Download Button */}
+            <motion.a
               href="/DhanushKumarS_CV.pdf"
               download
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-portfolio-purple to-portfolio-cyan text-white hover:brightness-110 transition-all w-fit mx-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-portfolio-purple to-portfolio-cyan text-white hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] hover:brightness-110 transition-all w-fit mx-auto border border-white/10"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-5 h-5 animate-bounce" />
               <span>Download Resume</span>
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Experience Section */}
@@ -257,42 +263,52 @@ const Resume = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-16"
+            className="mb-20"
           >
-            <h3 className="text-2xl font-bold mb-8 text-gradient-secondary">Experience</h3>
-            <div className="space-y-8">
+            <h3 className="text-2xl font-bold mb-10 text-gradient-secondary">Experience</h3>
+            
+            {/* Timeline Wrapper */}
+            <div className="relative border-l-2 border-portfolio-purple/20 ml-3 md:ml-6 pl-6 md:pl-10 space-y-10">
               {experience.map((job, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
-                  className="card-glow hover:scale-105 transition-all duration-300"
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                  className="relative"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-semibold text-foreground">{job.title}</h4>
-                      <p className="text-portfolio-purple font-medium">{job.company}</p>
-                    </div>
-                    <div className="text-sm text-muted-foreground mt-2 md:mt-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Calendar className="w-4 h-4" />
-                        {job.period}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        {job.location}
-                      </div>
-                    </div>
+                  {/* Glowing Node Dot */}
+                  <div className="absolute -left-[33px] md:-left-[49px] top-6 w-5 h-5 rounded-full bg-background border-2 border-portfolio-purple flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                    <div className="w-2 h-2 rounded-full bg-portfolio-cyan animate-pulse" />
                   </div>
-                  <ul className="space-y-2">
-                    {job.achievements.map((achievement, i) => (
-                      <li key={i} className="text-muted-foreground flex items-start">
-                        <span className="text-portfolio-cyan mr-2 mt-1">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
+
+                  <TiltCard className="p-6 md:p-8 hover:border-portfolio-purple/35 transition-all duration-300">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                      <div>
+                        <h4 className="text-xl md:text-2xl font-bold text-white tracking-tight">{job.title}</h4>
+                        <p className="text-portfolio-purple-light font-bold text-sm md:text-base mt-1">{job.company}</p>
+                      </div>
+                      <div className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-0 space-y-1 md:text-right shrink-0">
+                        <div className="flex items-center md:justify-end gap-2 text-portfolio-cyan-light font-medium">
+                          <Calendar className="w-4 h-4" />
+                          {job.period}
+                        </div>
+                        <div className="flex items-center md:justify-end gap-2">
+                          <MapPin className="w-4 h-4" />
+                          {job.location}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <ul className="space-y-3">
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i} className="text-sm md:text-base text-muted-foreground leading-relaxed flex items-start">
+                          <span className="text-portfolio-cyan mr-3 mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-portfolio-cyan" />
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </TiltCard>
                 </motion.div>
               ))}
             </div>
@@ -304,32 +320,41 @@ const Resume = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <h3 className="text-2xl font-bold mb-8 text-gradient-secondary">Education</h3>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-bold mb-10 text-gradient-secondary">Education</h3>
+            
+            {/* Timeline Wrapper */}
+            <div className="relative border-l-2 border-portfolio-purple/20 ml-3 md:ml-6 pl-6 md:pl-10 space-y-8">
               {education.map((edu, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                  transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
-                  className="card-glow"
+                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                  className="relative"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <h4 className="text-xl font-semibold text-foreground">{edu.degree}</h4>
-                      <p className="text-portfolio-purple font-medium">{edu.school}</p>
-                    </div>
-                    <div className="text-sm text-muted-foreground mt-2 md:mt-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Calendar className="w-4 h-4" />
-                        {edu.period}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        {edu.location}
-                      </div>
-                    </div>
+                  {/* Glowing Node Dot */}
+                  <div className="absolute -left-[33px] md:-left-[49px] top-6 w-5 h-5 rounded-full bg-background border-2 border-portfolio-purple flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+                    <div className="w-2 h-2 rounded-full bg-portfolio-orange animate-pulse" />
                   </div>
+
+                  <TiltCard className="p-6 md:p-8 hover:border-portfolio-purple/35 transition-all duration-350">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between">
+                      <div>
+                        <h4 className="text-lg md:text-xl font-bold text-white tracking-tight">{edu.degree}</h4>
+                        <p className="text-portfolio-purple-light font-bold mt-1">{edu.school}</p>
+                      </div>
+                      <div className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-0 space-y-1 md:text-right shrink-0">
+                        <div className="flex items-center md:justify-end gap-2 text-portfolio-orange-light font-medium">
+                          <Calendar className="w-4 h-4" />
+                          {edu.period}
+                        </div>
+                        <div className="flex items-center md:justify-end gap-2">
+                          <MapPin className="w-4 h-4" />
+                          {edu.location}
+                        </div>
+                      </div>
+                    </div>
+                  </TiltCard>
                 </motion.div>
               ))}
             </div>
