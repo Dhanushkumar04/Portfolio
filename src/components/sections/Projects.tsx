@@ -10,6 +10,30 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Topi Vappa Biryani - Premium Restaurant Website',
+      description: 'A high-fidelity, interactive single-page application for a luxury restaurant, featuring a hardware-accelerated 3D serving cloche/pot lid epicenter with Three.js, responsive particle steam effects, GSAP scroll triggers, a real-time menu search/filter system, a custom cart dashboard, and dine-in reservation validation.',
+      image: '/projects/topi_vappa.png',
+      tags: ['Three.js', 'GSAP', 'JavaScript', 'HTML5/CSS3'],
+      demoLink: '#',
+      featured: true,
+    },
+    {
+      title: '3DMania - Immersive Virtual Tours & Drone Showcase',
+      description: 'An interactive React-based SPA built with React 19, Vite, React Router, Three.js (@react-three/fiber/@react-three/drei), and Framer Motion. Features a global 3D orbiting dodecahedron particle background, a programmatically synthesized 3D drone model, responsive services detail pages, and direct-action Google Street View integrations.',
+      image: '/projects/3dmania.png',
+      tags: ['React', 'Three.js', 'React Three Fiber', 'Framer Motion'],
+      demoLink: '#',
+      featured: true,
+    },
+    {
+      title: 'Taj Furniture - Luxury Showroom Platform',
+      description: 'A hybrid SPA/MPA showroom platform designed with a dark, gold-accented "quiet luxury" aesthetic. Features an interactive 3D WebGL showroom system using OBJLoader and custom OrbitControls for realistic lighting, normal/roughness mapping material reflections, a state-driven local-storage cart system, and responsive layouts.',
+      image: '/projects/taj_furniture.png',
+      tags: ['Tailwind CSS', 'Three.js', 'WebGL', 'JavaScript'],
+      demoLink: '#',
+      featured: true,
+    },
+    {
       title: 'Job Portal – Full-Stack Web Application',
       description: 'A comprehensive job portal built with Django and React, featuring user authentication, job listings, application tracking, and an admin dashboard for managing postings and users.',
       image: '/projects/job_portal.png',

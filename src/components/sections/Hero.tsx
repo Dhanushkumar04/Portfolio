@@ -41,7 +41,7 @@ const Hero = () => {
       {/* Premium Background Textures and Overlays */}
       <div className="absolute inset-0 bg-grid-lines opacity-[0.03] pointer-events-none" />
       <div className="absolute inset-0 bg-grid-dots opacity-[0.07] pointer-events-none" />
-      
+
       {/* Background Effects */}
       <ParticleBackground />
       <Scene3D />
@@ -60,7 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.6, type: 'spring' }}
             className="mb-6"
           >
-            <span className="inline-block px-5 py-2 rounded-full text-sm font-semibold tracking-wider text-portfolio-purple-light bg-gradient-to-r from-portfolio-purple/10 to-portfolio-cyan/10 border border-portfolio-purple/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(139,92,246,0.15)]">
+            <span className="inline-block px-5 rounded-full text-sm font-semibold tracking-wider text-portfolio-purple-light bg-gradient-to-r from-portfolio-purple/10 to-portfolio-cyan/10 border border-portfolio-purple/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(139,92,246,0.15)]">
               👋 Hello, I'm
             </span>
           </motion.div>
@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, type: 'spring', stiffness: 80 }}
-            className="text-5xl md:text-8xl font-black mb-6 tracking-tight drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
+            className="text-3xl md:text-6xl font-black mb-6 tracking-tight drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
           >
             <span className="text-gradient">Dhanush Kumar S</span>
           </motion.h1>

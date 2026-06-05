@@ -9,6 +9,39 @@ const Resume = () => {
 
   const experience = [
     {
+      title: 'Topi Vappa Biryani - Premium Restaurant Website',
+      company: 'Client Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Engineered a high-performance Single Page Application (SPA) utilizing vanilla HTML, CSS, and JS with smooth client-side routing.',
+        'Integrated Three.js to render a hardware-accelerated 3D epicenter cloche/pot lid with mouse-responsive orbit mechanics, and customized dynamic particle systems simulating steam and spice drift.',
+        'Implemented GSAP and ScrollTrigger for premium stagger and entry animations, alongside full-catalog menu search, dietary toggles, and form-validated dine-in reservation booking.',
+      ],
+    },
+    {
+      title: '3DMania - Immersive Virtual Tours & Drone Showcase',
+      company: 'Client Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Developed a modular React 19 SPA built with Vite, React Router, and Framer Motion for high-fidelity animations and page transitions.',
+        'Created a hardware-accelerated 3D background with @react-three/fiber and @react-three/drei, programmatically synthesizing a detailed drone model with animated rotating propellers.',
+        'Integrated interactive drone videography cinematic sections, live Google Street View coordinates redirects, and client logos marquee.',
+      ],
+    },
+    {
+      title: 'Taj Furniture - Luxury Showroom Platform',
+      company: 'Client Project',
+      period: '2026',
+      location: 'Remote',
+      achievements: [
+        'Designed a sleek dark-themed SPA/MPA hybrid furniture storefront utilizing Tailwind CSS and Google Fonts to deliver a "quiet luxury" aesthetic.',
+        'Configured a WebGL Three.js viewport featuring OrbitControls and OBJLoader for cycle-loading 3D models with normal and roughness map studio light reflections.',
+        'Built a persistent client-side shopping cart system with localized storage, item quantity management, and tax/discount calculations.',
+      ],
+    },
+    {
       title: 'Job Portal – Full-Stack Web Application',
       company: 'Self Project',
       period: '2026',
@@ -244,7 +277,7 @@ const Resume = () => {
             <p className="text-xl text-muted-foreground mb-8">
               My professional journey and achievements
             </p>
-            
+
             {/* Glowing Download Button */}
             <motion.a
               href="/DhanushKumarS_CV.pdf"
@@ -266,7 +299,7 @@ const Resume = () => {
             className="mb-20"
           >
             <h3 className="text-2xl font-bold mb-10 text-gradient-secondary">Experience</h3>
-            
+
             {/* Timeline Wrapper */}
             <div className="relative border-l-2 border-portfolio-purple/20 ml-3 md:ml-6 pl-6 md:pl-10 space-y-10">
               {experience.map((job, index) => (
@@ -299,7 +332,7 @@ const Resume = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-3">
                       {job.achievements.map((achievement, i) => (
                         <li key={i} className="text-sm md:text-base text-muted-foreground leading-relaxed flex items-start">
@@ -321,7 +354,7 @@ const Resume = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <h3 className="text-2xl font-bold mb-10 text-gradient-secondary">Education</h3>
-            
+
             {/* Timeline Wrapper */}
             <div className="relative border-l-2 border-portfolio-purple/20 ml-3 md:ml-6 pl-6 md:pl-10 space-y-8">
               {education.map((edu, index) => (

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { Send, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import TiltCard from '@/components/ui/TiltCard';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -16,35 +17,67 @@ const Contact = () => {
     message: '',
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/dkdhanush1970@gmail.com", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          _replyto: formData.email,
-          _subject: formData.subject || "New contact form submission",
-          message: formData.message,
-        })
-      });
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+      const hasEmailJS = serviceId && templateId && publicKey && 
+                         serviceId !== "YOUR_SERVICE_ID" && 
+                         templateId !== "YOUR_TEMPLATE_ID" && 
+                         publicKey !== "YOUR_PUBLIC_KEY";
+
+      if (hasEmailJS) {
+        // Send email using EmailJS client‑side service
+        const emailParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || "New contact form submission",
+          message: formData.message,
+        };
+
+        const response = await emailjs.send(
+          serviceId,
+          templateId,
+          emailParams,
+          publicKey
+        );
+
+        if (response.status !== 200) {
+          throw new Error("Failed to send message via EmailJS");
+        }
+      } else {
+        // Fallback to FormSubmit.co so the form works out-of-the-box
+        const response = await fetch("https://formsubmit.co/ajax/dkdhanush1970@gmail.com", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            _replyto: formData.email,
+            subject: formData.subject || "New contact form submission",
+            message: formData.message,
+          })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.message || "Failed to send message via FormSubmit");
+        }
       }
 
       toast({
@@ -54,9 +87,10 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error("Submission error details:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
+        description: error instanceof Error ? error.message : "Please try again or contact me directly via email.",
         variant: "destructive",
         duration: 5000,
       });

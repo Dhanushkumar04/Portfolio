@@ -118,7 +118,7 @@ const About = () => {
                   Hey there!
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                  I'm Dhanush, currently pursuing Computer Science Engineering at Kumaraguru College of Technology. My journey in tech has been incredibly exciting, spanning across full-stack web development, UI/UX design, and data analytics. Through my recent internships and personal projects—like building interactive Tableau/Power BI dashboards, AI-powered healthcare platforms, and designing mobile apps in Figma—I've developed a versatile skill set. I thrive at the intersection of design, development, and data, bringing a holistic approach to every project I tackle.
+                  I'm Dhanush, a freelance developer, designer, and analyst who turns complex ideas into smooth, high-performing digital products. Since graduating with a degree in Computer Science Engineering from Kumaraguru College of Technology, I’ve been partnering directly with clients to build immersive 3D websites, interactive data dashboards, and intelligent web applications. I love working at the intersection of clean code, intuitive design, and structured data, bringing a cohesive and thoughtful approach to every project I take on.
                 </p>
               </div>
             </motion.div>
